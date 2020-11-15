@@ -2,7 +2,6 @@
   <div id="app">
     <router-view/>
       <v-bottom-navigation
-        :value="value"
         color="teal"
         grow
         app
@@ -11,16 +10,16 @@
         to="/about"
         height="auto"
         >
-          <span>Recents</span>
+          <span>Recent Games</span>
 
           <v-icon>mdi-history</v-icon>
         </v-btn>
 
         <v-btn 
-        to="/home" 
+        to="/" 
         height="auto"
         >
-          <span>Favorites</span>
+          <span>Current</span>
 
           <v-icon>mdi-heart</v-icon>
         </v-btn>
@@ -44,17 +43,6 @@
   text-align: center;
   color: #2c3e50;
   height: 100vh;
-}
-
-#nav {
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  background-color: #fafafa;
 }
 </style>
