@@ -11,6 +11,11 @@ export default {
   name: 'Home',
   components: {
     ScoreCard
+  },
+  data: function() {
+    return {
+      
+    }
   }
 }
 </script>

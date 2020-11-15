@@ -32,111 +32,75 @@
                 </v-col>
             </v-row>
             <!-- Score results -->
-            <div class="chart-score d-flex flex-column">
-                <v-row 
-                v-for="(row,index) in scoreLog"
-                :key="index"
-                class="score-row"
-                justify-content="space-around"
-                no-gutters
-                >
-                    <v-col 
-                    class="score-col d-flex justify-center align-center"
-                    >
-                        <div class="score-amount">
-                            {{row.forks}}
-                            {{row.winner}}
-                        </div>
-                    </v-col>
-                    <!-- POTENTIAL DIVIDER TO ADD SEPARATION -->
-                    <!-- <v-divider vertical></v-divider> -->
-                    <v-col 
-                    class="score-col d-flex justify-center align-center"
-                    >
-                        <div class="score-amount">
-                            {{row.knives}}
-                        </div>
-                    </v-col>
-                    <!-- <v-divider vertical></v-divider> -->
-                    <v-col 
-                    class="score-col d-flex justify-center align-center"
-                    >
-                        <div class="score-amount">
-                            {{row.spoons}}
-                        </div>
-                    </v-col>                  
-                </v-row>
+            <div 
+            class="chart-score d-flex flex-column"
+            v-for="(row,index) in scoreLog"
+            :key="index"
+            >
+                <ScoreRow 
+                :forkScore="row.forks"
+                :knifeScore="row.knives"
+                :spoonScore="row.spoons"
+                />
             </div>
         </v-container>
     </v-sheet>
 </template>
 
 <script>
-// @ is an alias to /src
-
+import ScoreRow from './ScoreRow.vue'
 
 export default {
   name: 'ScoreCard',
   components: {
-
+      ScoreRow
   },
   methods: {
-    winner: function() {
-        // this.scoreLog.winner = 9
-        
-        }
-    },
-    mounted() {
-         this.winner()       
+    
     },
     data: function() {
       return {
-          title: "6",
 
           scoreLog: [
             {
-            winner: null,
-            forks: "9",
-            knives: "3",
-            spoons: "8"
+            forks: 9,
+            knives: 3,
+            spoons: 8
             },
             {
-            winner: null,
-            forks: "3",
-            knives: "7",
-            spoons: "5"
+            forks: 3,
+            knives: 9,
+            spoons: 5
             },
             {
-            winner: null,
-            forks: "10",
-            knives: "0",
-            spoons: "1"
+            forks: 10,
+            knives: 0,
+            spoons: 1
             },
             {
-            winner: null,
-            forks: "10",
-            knives: "0",
-            spoons: "1"
+            forks: 10,
+            knives: 0,
+            spoons: 1
             },
             {
-            winner: null,
-            forks: "0",
-            knives: "0",
-            spoons: "1"
+            forks: 0,
+            knives: 0,
+            spoons: 1
             },
             {
-            winner: null,
-            forks: "7",
-            knives: "8",
-            spoons: "9"
+            forks: 7,
+            knives: 8,
+            spoons: 9
             },
             {
-            winner: null,
-            forks: "15",
-            knives: "2",
-            spoons: "8"
+            forks: 15,
+            knives: 5,
+            spoons: 2
             },
           ],
+    mounted() {
+        this.winner()       
+    },
     }
   }
 }
