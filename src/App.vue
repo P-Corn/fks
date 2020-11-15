@@ -1,24 +1,52 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
+      <v-bottom-navigation
+        :value="value"
+        color="teal"
+        grow
+        app
+      >
+        <v-btn 
+        to="/about"
+        height="auto"
+        >
+          <span>Recents</span>
+
+          <v-icon>mdi-history</v-icon>
+        </v-btn>
+
+        <v-btn 
+        to="/home" 
+        height="auto"
+        >
+          <span>Favorites</span>
+
+          <v-icon>mdi-heart</v-icon>
+        </v-btn>
+
+        <v-btn 
+        height="auto"
+        >
+          <span>Nearby</span>
+
+          <v-icon>mdi-map-marker</v-icon>
+        </v-btn>
+      </v-bottom-navigation>
   </div>
 </template>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100vh;
 }
 
 #nav {
-  padding: 30px;
 
   a {
     font-weight: bold;
