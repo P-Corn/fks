@@ -14,7 +14,7 @@ export default {
   },
   data: function() {
     return {
-      
+
     }
   }
 }
@@ -22,9 +22,9 @@ export default {
 
 <style lang="scss">
 .home {
-  height: 100%; //Allows the view to take up the entire screen
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 </style>

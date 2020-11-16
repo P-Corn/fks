@@ -49,9 +49,9 @@
 export default {
   name: 'ScoreRow',
   props: {
-      forkScore: String,
-      knifeScore: String,
-      spoonScore: String
+      forkScore: Number,
+      knifeScore: Number,
+      spoonScore: Number
   },
   data: function() {
       return {
